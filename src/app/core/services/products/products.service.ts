@@ -14,4 +14,10 @@ export class ProductsService {
   getProducts(pageTWo:string): Observable<any>{
     return this._HttpClient.get(baseUrl+"api/v1/products"+pageTWo)
   }
+  getProductDetails(id:string|null):Observable <any>{
+   
+  return this._HttpClient.get(`${baseUrl}api/v1/products/${id}`) 
+  }
+
+  
 }

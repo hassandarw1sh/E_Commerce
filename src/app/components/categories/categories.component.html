@@ -1,1 +1,61 @@
-<p>categories works!</p>
+<section class="dark:bg-slate-900 mx-auto px-11 ">
+
+
+
+    <div class="container  md:mx-auto  md:py-40 ">
+    
+        <div class="grid lg:grid-cols-6 md:grid-cols-4   justify-center   md:gap-3 ">
+            @for (product of Category ; track $index) {
+
+            <div class="w-full  relative overflow-hidden group  ">
+
+
+                <div
+                    class="  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800  dark:border-gray-700">
+
+                    <div class="relative">
+                        <div class="group-hover:scale-110">
+
+                            <img class="p-8 rounded-t-lg h-80" [src]="product.image" alt="product image"  />
+                        </div>
+
+                        <div class="px-5 pb-5 bg">
+                            <div>
+
+                                <h5 class="text-xl font-semibold tracking-tight text-green-500 dark:text-white">
+
+                                    {{product.name.split('').slice(0,9).join('') }}</h5>
+                                <!-- custom pipe  -->
+                                <!-- <h5 class="text-xl font-semibold tracking-tight text-green-500 dark:text-white">
+                                    {{product.title |sale}}</h5> -->
+
+                             
+                              
+                            </div>
+
+
+                       
+                        </div>
+
+                        
+                    </div>
+                  
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            }
+        </div>
+
+
+    </div>
+    <div class="flex justify-center">
+       
+    </div>
+</section>

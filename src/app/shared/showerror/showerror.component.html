@@ -1,0 +1,26 @@
+@if(_FormGroup.get(formControlName)?.errors &&  (_FormGroup.get(formControlName)?.touched || _FormGroup.get(formControlName)?.dirty)){
+    <div class="text-black bg-red-300  rounded-md   my-8 ">
+      <ul class="">
+          @if(_FormGroup.get(formControlName)?.getError('required')){
+
+              <li class="px-8">Input is required.</li>
+          }
+          @if(_FormGroup.get(formControlName)?.getError('minlength')){
+              <li class="px-8">Input must be more than 2 characters.</li>
+          }
+          @if(_FormGroup.get(formControlName)?.getError('maxlength')){
+              <li class="px-8">Input must be fewer than 20 characters.</li>
+          }
+          @if(_FormGroup.get(formControlName)?.getError('email')){
+            <li class="px-8">Email must end with {{endEmail}}</li>
+
+          }
+          @if(_FormGroup.get(formControlName)?.getError('pattern')){
+            <li class="px-8">Your password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character (such as #, ?, !, $, %, ^, &, , or -)</li>
+
+          }
+          
+      </ul>
+
+    </div>
+  }

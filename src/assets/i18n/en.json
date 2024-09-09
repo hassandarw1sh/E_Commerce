@@ -1,0 +1,24 @@
+{
+    "navbar":{
+        "Home":"Home",
+    "products":"products",
+    "Categories":"Categories",
+    "Brands":"Brands",
+    "Signout":"SignOut",
+    "lang" :"lang"
+    },
+    "home":{
+        "Our Categories":"Our Categories",
+        "Add To Cart":"Add To Cart"
+    }, "fo": {
+        "Get The FreshCart App": "Get The FreshCart App",
+        "We Will Send You a Link, Open it on Your Phone to download the app": "We Will Send You a Link, Open it on Your Phone to download the app",
+        "Email address": "Email address",
+        "Your email address...": "Your email address...",
+        "Subscribe": "Subscribe",
+        "payment partners": "payment partners",
+        "Get Deliveries with FreshCart": "Get Deliveries with FreshCart"
+      }
+
+
+}

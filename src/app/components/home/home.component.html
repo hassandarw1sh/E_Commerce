@@ -1,1 +1,187 @@
-<p>home works!</p>
+<section class="dark:bg-slate-900 md:py-16">
+    <div class="container mx-auto">
+        <div class="flex flex-wrap">
+            <div class="w-10/12">
+                <owl-carousel-o [options]="customOptionsMain">
+                    <ng-template carouselSlide>
+                        <img src="assets/images/img1.avif" class="w-full h-[400px]" alt="">
+
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <img src="assets/images/img2.avif" class="w-full h-[400px]" alt="">
+
+                    </ng-template>
+                    <ng-template carouselSlide>
+
+                        <img src="assets/images/img3.avif" class="w-full h-[400px]" alt="">
+
+                    </ng-template>
+                    <ng-template carouselSlide>
+
+                        <img src="assets/images/img4.avif" class="w-full h-[400px]" alt="">
+
+                    </ng-template>
+                    <ng-template carouselSlide>
+
+                        <img src="assets/images/img5.avif" class="w-full h-[400px]" alt="">
+
+                    </ng-template>
+                    <ng-template carouselSlide>
+
+                        <img src="assets/images/img6.avif" class="w-full h-[400px]" alt="">
+
+                    </ng-template>
+                </owl-carousel-o>
+                <!-- <img src="assets/images/slide" class="w-full" alt=""> -->
+                <!-- <img src="assets/images/slider-image-1.jpeg" class="w-full" alt=""> -->
+            </div>
+            <div class="w-2/12">
+                <img src="assets/images/grocery-banner.png" class="w-full h-[200px]" alt="">
+                <img src="assets/images/grocery-banner-2.jpeg" alt="" class="w-full h-[200px]">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<section class="dark:bg-slate-900 md:py-16 m-0">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center dark:text-white text-green-400 py-3">{{"home.Our Categories"
+            |translate}}</h2>
+        <owl-carousel-o [options]="customOptionsCat ">
+            @for (category of allCategories; track category._id) {
+
+
+
+
+            <ng-template carouselSlide>
+                <img class=" w-full h-64" [src]="category.image" [alt]="category.name" [title]="category.name">
+                <h3 class="text-xl font-semibold tracking-tight text-green-500 dark:text-white">{{category.name}}</h3>
+            </ng-template>
+
+
+            }
+
+        </owl-carousel-o>
+    </div>
+</section>
+
+
+
+
+
+<section class="dark:bg-slate-900 mx-auto px-11 ">
+
+
+
+    <div class="container  md:mx-auto  md:py-40 ">
+        <input [(ngModel)]="text" type="search" id="default-search"
+            class="block my-9 p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search ">
+        <div class="grid lg:grid-cols-6 md:grid-cols-4   justify-center   md:gap-3 ">
+            @for (product of allProducts.slice(0,12) |search:text; track $index) {
+
+            <div class="w-full  relative overflow-hidden group ">
+
+
+                <div
+                    class="  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800  dark:border-gray-700">
+
+                    <div [routerLink]="['/details',product._id]" class="relative">
+                        <div class="group-hover:scale-110">
+
+                            <img class="p-8 rounded-t-lg" [src]="product.imageCover" alt="product image" />
+                        </div>
+
+                        <div class="px-5 pb-5 bg">
+                            <div>
+
+                                <h5 class="text-xl font-semibold tracking-tight text-green-500 dark:text-white">
+
+                                    {{product.title.split('').slice(0,9).join('') }}</h5>
+                                <!-- custom pipe  -->
+                                <!-- <h5 class="text-xl font-semibold tracking-tight text-green-500 dark:text-white">
+                                    {{product.title |sale}}</h5> -->
+
+                                <div class="flex items-center mt-2.5 mb-5">
+                                    @for (num of [1,2,3,4,5]; track $index) {
+                                    @if (num <= product.ratingsAverage) { <i class="fa-solid fa-star text-yellow-300">
+                                        </i>
+                                        }
+                                        }
+                                        @if(product.ratingsAverage%1!==0){
+                                        <i class="fa-regular fa-star-half-stroke text-yellow-300"></i>
+
+
+                                        }
+                                        @if(product.ratingsAverage<5){ @if (product.ratingsAverage%1!==0) { @for (number
+                                            of [1,2,3,4,5]; track $index) { @if (number>product.ratingsAverage+1) {
+                                            <i class="fa-regular fa-star text-yellow-300"></i>
+                                            }
+                                            }
+                                            }@else {
+                                            @for (number of [1,2,3,4,5]; track $index) {
+                                            @if (number>product.ratingsAverage ) {
+                                            <i class="fa-regular fa-star text-yellow-300"></i>
+
+
+                                            }
+                                            }
+
+                                            }
+
+                                            }
+
+
+                                            <span
+                                                class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">{{product.ratingsAverage}}</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="text-xl font-bold text-black group-hover:scale-105 dark:text-white">{{product.price
+                                        | currency :"GBP"}}
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    <button (click)="AddToCart(product._id)"
+                        class=" bg-[#0aad0a] btn group-hover:scale-110 my-3   group-hover:translate-y-[%0] group-hover:opacity-100  dark:text-black">
+
+
+                        {{"home.Add
+                        To Cart"|translate}}
+
+
+
+                    </button>
+                    @if (isWish.includes(product._id)) {
+
+                    <i (click)="removeLoveOfProduct(product._id)"
+                        class=" text-red-500 px-16 fa-solid fa-heart text-xl text-center  absolute cursor-pointer bottom-6 group-hover:translate-y-0 translate-y-96	dark:text-white  transition ease-in-out delay-150   group-hover:scale-110  duration-300 "></i>
+                    }@if (!isWish.includes(product._id)) {
+                    <i (click)="AddWishList(product._id)"
+                        class=" px-16 fa-solid fa-heart text-xl text-center  absolute cursor-pointer bottom-6 group-hover:translate-y-0 translate-y-96	dark:text-white  transition ease-in-out delay-150   group-hover:scale-110  duration-300 "></i>
+
+                    }
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            }
+        </div>
+
+
+    </div>
+
+</section>

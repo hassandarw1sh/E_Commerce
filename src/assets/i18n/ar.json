@@ -1,0 +1,28 @@
+{
+    "navbar": {
+    "Home": "الرئيسية",
+    "products": "المنتجات",
+    "Categories": "الفئات",
+    "Brands": "الماركات",
+    "Signout": "تسجيل الخروج",
+    "lang" :"غ"
+},
+
+    "home": {
+      "Our Categories": "فئاتنا",
+       "Add To Cart": "أضف إلى السلة"
+    },
+    
+        "fo": {
+          "Get The FreshCart App": "احصل على تطبيق FreshCart",
+          "We Will Send You a Link, Open it on Your Phone to download the app": "سنرسل لك رابطًا، افتحه على هاتفك لتحميل التطبيق",
+          "Email address": "البريد الإلكتروني",
+          "Your email address...": "بريدك الإلكتروني...",
+          "Subscribe": "اشترك",
+          "payment partners": "شركاء الدفع",
+          "Get Deliveries with FreshCart": "احصل على التوصيلات مع FreshCart"
+        }
+      }
+      
+  
+  
