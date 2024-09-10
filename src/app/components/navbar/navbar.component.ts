@@ -21,7 +21,19 @@ export class NavbarComponent implements OnChanges {
   private _CartService=inject(CartService)
 cartProduct:Cart|null=null
 isnumber:number=0
+@ViewChild('mydiv') div!:ElementRef
+@ViewChild('open') open!:ElementRef
+@ViewChild('close') close!:ElementRef
 
+navbarOpenClose(){
+
+  this.div.nativeElement.classList.toggle('hidden')
+  this.open.nativeElement.classList.toggle('hidden')
+  this.close.nativeElement.classList.toggle('hidden')
+
+
+
+}
 
 
 getCart() {
