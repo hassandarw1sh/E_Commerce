@@ -61,6 +61,7 @@ export class SigninComponent {
       },
       error: (err) => {
         console.error(err);
+        this._NgxSpinnerService.hide('signin')
 
         this.isBottonSub = false;
       },

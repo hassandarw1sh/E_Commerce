@@ -97,7 +97,7 @@
                 </button>
                 @if (isWish.includes(product._id)) {
 
-                    <i (click)="removeLoveOfProduct(product._id)"  class=" text-red-500 px-16 fa-solid fa-heart text-xl text-center  absolute cursor-pointer bottom-6 group-hover:translate-y-0 translate-y-96	dark:text-white  transition ease-in-out delay-150   group-hover:scale-110  duration-300 "></i>
+                    <i (click)="removeLoveOfProduct(product._id)"  class=" text-red-500 px-16 fa-solid fa-heart-crack text-xl text-center  absolute cursor-pointer bottom-6 group-hover:translate-y-0 translate-y-96	dark:text-red-600  transition ease-in-out delay-150   group-hover:scale-110  duration-300 "></i>
                 }@if (!isWish.includes(product._id)) {
                     <i (click)="AddWishList(product._id)"  class=" px-16 fa-solid fa-heart text-xl text-center  absolute cursor-pointer bottom-6 group-hover:translate-y-0 translate-y-96	dark:text-white  transition ease-in-out delay-150   group-hover:scale-110  duration-300 "></i>
 
